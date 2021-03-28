@@ -8,12 +8,24 @@
 	<body cz-shortcut-listen="true">
 
     <?php
-        $data = "\n". $_REQUEST["name"]."; ".$_REQUEST["sections"][0]."; ".$_REQUEST["creditCardNumber"]."; ".$_REQUEST["cardType"]."\n";
-        $filename = "suckers.txt";
-        file_put_contents($filename,$data, FILE_APPEND);
-        $suckers = file_get_contents($filename);
+        // initializing needed values;
+        $name = $_REQUEST["name"];
+        $section = $_REQUEST["sections"][0];
+        $creditCardNumber = $_REQUEST["creditCardNumber"];
+        $cardType = $_REQUEST["cardType"];
 
+        $isValid = isset($name) && isset($section)
+            && isset($creditCardNumber) && isset($cardType)
+            && $name !='' && $section != '' & $creditCardNumber != '' && $cardType != '';
+        if ($isValid){
+            $data = "\n". $name."; ".$section."; ".$creditCardNumber."; ".$cardType."\n";
+            $filename = "suckers.txt";
+            file_put_contents($filename,$data, FILE_APPEND);
+            $suckers = file_get_contents($filename);
+        }
     ?>
+
+    <?php if ($isValid) {?>
 		<h1>Thanks, sucker!</h1>
 
 		<p>Your information has been recorded.</p>
@@ -40,5 +52,12 @@
     <pre>
         <?= $suckers ?>
     </pre>
+
+    <?php } else { ?>
+    <h1>Come on sucker, fill everything correctly.</h1>
+        <p>Even though you are dump, you should know that every field needs to be filled properly.</p>
+        <a href="/lab-5-JakhongirRasulov007-1/buygrade.html">try again..</a>
+
+    <?php } ?>
 	
   </body></html>
