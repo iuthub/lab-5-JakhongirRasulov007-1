@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0079)http://www.webstepbook.com/supplements/labsection/lab4-buyagrade/buyagrade.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>Buy Your Way to a Better Education!</title>
+		<link href="./buygrade_files/buyagrade.css" type="text/css" rel="stylesheet">
+
+	<style>
+		html{
+			background-color: #d1f7ea;
+		}
+		.container{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		input[type="text"]{
+			background-color:beige;
+			padding: 0.1rem 0.2rem;
+		}
+		input[type="text"]:focus{
+			outline: none;
+		}
+		select[name="section"]{
+			width: 10rem;
+		}
+		button[type="submit"]{
+			background-color: #ff0000;
+			color: white;
+			width: 80%;
+			padding: 0.5rem;
+			font-size: 2rem;
+		}
+		button[type="submit"]:hover, input[type="radio"]{
+			cursor: pointer;
+		}
+
+	</style>
+	</head>
+	
+	<body cz-shortcut-listen="true" >
+		<h1>Buy Your Way to a Better Education!</h1>
+
+		<p>
+			The rough economy, along with recent changes in University
+			of Washington policy, now allow us to offer grades for money.
+			That's right!  All you need to get a 4.0 in this course is cold, hard, cash.
+		</p>
+		
+		<hr>
+		
+		<h2>Give Us Your Money</h2>
+		<form action="/lab-5-JakhongirRasulov007-1/sucker.php" method="post" target="_blank" class="container">
+			<dl>
+				<div>
+					<dt>Name</dt>
+					<dd>
+						<input type="text" name="name">
+					</dd>
+				</div>
+
+
+				<dt>Section</dt>
+				<dd>
+					<select name="sections[]" >
+						<option value="MA" selected>MA</option>
+						<option value="MB">MB</option>
+						<option value="MC">MC</option>
+						<option value="MD">MD</option>
+						<option value="ME">ME</option>
+						<option value="MF">MF</option>
+						<option value="MH">MH</option>
+
+					</select>
+				</dd>
+
+				<dt>Credit Card</dt>
+				<dd>
+					<input type="text" name="creditCardNumber">
+					<input type="radio" name="cardType" id="masterCard" value="masterCard"> Master Card
+					<input type="radio" name="cardType" id="visaCard" value="visaCard"> Visa
+				</dd>
+			</dl>
+
+			<button type="submit">
+				I am a giant sucker.
+			</button>
+		</form>
+	
+</body></html>
