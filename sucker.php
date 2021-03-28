@@ -6,6 +6,14 @@
 	</head>
 
 	<body cz-shortcut-listen="true">
+
+    <?php
+        $data = "\n". $_REQUEST["name"]."; ".$_REQUEST["sections"][0]."; ".$_REQUEST["creditCardNumber"]."; ".$_REQUEST["cardType"]."\n";
+        $filename = "suckers.txt";
+        file_put_contents($filename,$data, FILE_APPEND);
+        $suckers = file_get_contents($filename);
+
+    ?>
 		<h1>Thanks, sucker!</h1>
 
 		<p>Your information has been recorded.</p>
@@ -24,8 +32,13 @@
 			<dt>Credit Card</dt>
 			<dd>
                 <?= $_REQUEST["creditCardNumber"]?>
-                <?= $_REQUEST["cardType"]?>
+                (<?= $_REQUEST["cardType"]?>)
             </dd>
 		</dl>
+
+    <h2>Here are all suckers who submitted this:</h2>
+    <pre>
+        <?= $suckers ?>
+    </pre>
 	
   </body></html>
